@@ -1,12 +1,35 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import FrameGrabber from "@/components/FrameGrabber";
 
 const Index = () => {
+  const ldJson = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: "FrameGrabber",
+    applicationCategory: "Multimedia",
+    operatingSystem: "Web, iOS (Safari)",
+    description:
+      "Ambil frame video jadi PNG dari link MP4 atau unggah video. Simple, cepat, satu kolom, ramah iPhone Pro Max.",
+  };
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen bg-hero-gradient">
+      <header className="container py-12">
+        <div className="max-w-[680px] mx-auto text-center space-y-3">
+          <h1 className="text-3xl md:text-4xl font-bold tracking-tight">
+            Ambil Frame Video jadi PNG (TikTok, YouTube, Reels)
+          </h1>
+          <p className="text-muted-foreground">
+            Tempel link video langsung (MP4/WEBM/MOV) atau unggah file. Pilih frame, simpan PNG—super cepat.
+          </p>
+        </div>
+      </header>
+      <main className="container pb-16">
+        <FrameGrabber />
+      </main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(ldJson) }}
+      />
     </div>
   );
 };
